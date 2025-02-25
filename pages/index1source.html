@@ -1,0 +1,113 @@
+<xmp>
+<!DOCTYPE html>
+  <!-- 
+  author: Jaxon Bladow
+  version: 3
+  best viewed: chrome
+  -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jaxon's Movie Log</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Agu+Display&display=swap');
+
+/* The following code is an upgraded form that takes elements from these w3schools posts and combines them to make a more usable form for multiple inputs.
+    https://www.w3schools.com/w3css/w3css_containers.asp
+    https://www.w3schools.com/howto/howto_css_stacked_form.asp
+    https://www.w3schools.com/cssref/css3_pr_gap.php
+    https://www.w3schools.com/cssref/css3_pr_resize.php
+    https://www.w3schools.com/css/css_display_visibility.asp
+    https://www.w3schools.com/cssref/css3_pr_flex-direction.php
+    */
+
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    textarea {
+      height: 100px; 
+      resize: vertical; 
+    }
+
+    body { 
+      background-color: #89CFF0;
+      margin: 20px;
+      padding: 20px;
+      background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="28" height="49" viewBox="0 0 28 49"%3E%3Cg fill-rule="evenodd"%3E%3Cg id="hexagons" fill="%239C92AC" fill-opacity="0.4" fill-rule="nonzero"%3E%3Cpath d="M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+    }
+
+    h1 {
+      font-family: "Agu Display", serif;
+    }
+
+    li {
+      font-size: 1.8em; 
+      border: solid 2px white;
+      margin: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div style="text-align: center;">
+    <h1>Jaxon's Movie Log</h1>
+    <p>This is a list of my movie experiences during the Spring 2025 semester🦭</p>
+  </div>
+  
+  <form>
+    <div class="form-container">
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date">
+
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title" placeholder="what'd ya watch">
+
+      <label for="rating">Rating</label>
+      <input type="text" id="rating" name="rating" placeholder="?/10">
+
+      <label for="thoughts">Thoughts</label>
+      <textarea id="thoughts" name="thoughts" placeholder="Your thoughts..."></textarea>
+    </div>
+  
+    <button id="saveData" class="btn btn-outline-primary">save viewing data</button>
+  </form>
+  
+  <ul> 
+    <li> 21 JAN. <strong>Severence Season 1</strong> <em>9/10</em> Show so good binged it all in one sitting. 
+      <a href="https://www.youtube.com/watch?v=xEQP4VVuyrY" target="_blank" >Trailer</a>
+    </li>
+    <li> 20 JAN. <strong>Tyrannosaur</strong> <em>8/10</em> Bit of a downer. A film so depressing it made my cold dead heart feel something.
+      <a href="https://youtu.be/nvyqXFmV-LI?si=vNhOF2viah65AX1s" target="_blank" >Trailer</a>
+    </li>
+    <li> 19 JAN. <strong>Psycho</strong> <em>8/10</em> The effect of this film on culture is more interesting than the actual movie to me, but it's still a fun murder mystery/slasher.
+      <a href="https://www.youtube.com/watch?v=DTJQfFQ40lI" target="_blank" >Trailer</a>
+    </li>
+    <li> 15 JAN. <strong>Silent Hill</strong> <em>4/10</em> A pathetic waste of my time and life.
+      <a href="https://www.youtube.com/watch?v=8q95d00fDQk" target="_blank" >Trailer</a>
+    </li>
+  </ul>
+
+  <img src="https://github.com/JaxonTheCritic/Images/blob/main/Wireframe.jpg?raw=true" alt="Wireframe" width="500" height="300">
+  <!-- I had to use width and height to keep the picture a smaller size becuase it kept wanting to output bigger than the webpage -->  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js'></script>
+  <script>
+    $(document).ready(function(){
+      $("#saveData").on("click", function(){
+        let statusText = underConstruction("not ready");   
+        $("#saveData").text(statusText).prop("disabled", true);
+      });
+
+      function underConstruction(status){  
+        return "not yet ready, bruh"; 
+      };
+    });
+  </script>
+</body>
+</html>
+</xmp>
